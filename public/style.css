@@ -1,0 +1,53 @@
+/* styles.css */
+
+.text-transition-enter-active,
+.text-transition-leave-active {
+    transition: opacity 0.5s ease-in-out;
+}
+
+.text-transition-enter, .text-transition-leave-to /* .text-transition-leave-active in <2.1.8 */ {
+    opacity: 0;
+}
+
+.fade-in {
+    animation: fadeIn 1s;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.slide-in {
+    animation: slideIn 1s;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.zoom-in {
+    animation: zoomIn 1s;
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}

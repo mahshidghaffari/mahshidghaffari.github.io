@@ -1,4 +1,7 @@
 {
-  "hello": "Hello!",
-  "welcome": "Welcome to my app."
+  "hello": "Bonjour !",
+  "welcome": "Bienvenue dans mon application.",
+  "home": "Accueil",
+  "about": "À propos",
+  "contact": "Contact"
 }

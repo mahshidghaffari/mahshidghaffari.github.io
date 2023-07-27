@@ -1,4 +1,4 @@
-# test
+# Multi lingual Vue3 project
 
 ## Project setup
 ```
