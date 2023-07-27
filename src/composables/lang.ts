@@ -1,7 +1,6 @@
 import { createI18n } from 'vue-i18n';
 import {DEF_LANG,LANG_DIR} from "@/composables/constants";
 import axios from 'axios';
-// import en from "@/lang/en"; // Import your default language translations
 import {SUPPORTED_LANG_TYPE} from "@/composables/constants";
 
 
@@ -36,9 +35,9 @@ export function loadLanguageAsync(lang: SUPPORTED_LANG_TYPE): Promise<string> {
     // If the language hasn't been loaded yet, use dynamic import to load the translation file
     return import(/* webpackChunkName: "lang-[request]" */ `@/lang/${lang}.json`).then(
         (messages) => {
-            console.log(messages)
-            // i18n.global.setLocaleMessage(lang,LANG_DIR[lang]);
-            i18n.global.setLocaleMessage(lang, messages);
+            console.log(messages.default)
+            i18n.global.setLocaleMessage(lang, messages.default);
+            i18n.global.locale = lang
             loadedLanguages.push(lang);
             return lang;
         }

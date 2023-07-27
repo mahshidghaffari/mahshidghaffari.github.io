@@ -18,11 +18,14 @@ export const LANG_DIR = {
     it: require('../lang/it.json'),
     sp: require('../lang/sp.json'),
 }
+
+// also add the code in here
+
+export type SUPPORTED_LANG_TYPE = 'en' | 'fr' | 'it' | 'sp';
 export const DEF_PAGES = [
     {name: "home", to: "/"},
     {name: "about", to: "/about"},
     {name: "contact", to: "/contact"}
 ]
 
-export type SUPPORTED_LANG_TYPE = 'en' | 'fr' | 'it' | 'sp';
 

@@ -12,9 +12,6 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/about',
     name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
   },
   {
@@ -28,10 +25,11 @@ const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes
 })
+
+// load the default lang file or local storage one
 router.beforeEach((to, from, next) => {
   const lang = to.params.lang || localStorage.getItem("lang") || DEF_LANG
   loadLanguageAsync(lang as SUPPORTED_LANG_TYPE).then(()=> {
-    console.log("here 0")
     next()
   })
 });
