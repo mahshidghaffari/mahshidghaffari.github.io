@@ -26,7 +26,13 @@ Submission Guidelines:
 1. Provide the complete Vue.js project folder (including the configuration files) with your code.
 2. Include instructions on how to run the project and test the multilingual feature.
 
+-----
+## Add Language Structure 
+1. Incorporate the PNG icon into your file by downloading it from this link: https://www.flaticon.com/free-icons/flag.
+2. Update the const SUPPORTED_LANG_TYPE and SUPPORTED_LANG_TYPE in the constants file located within the "composables" directory. Refer to the comment lines in the constant.ts file for further information on this update.
 
+
+-----
 ## Project setup
 ```
 npm install

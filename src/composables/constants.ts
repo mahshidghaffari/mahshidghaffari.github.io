@@ -10,8 +10,8 @@ export const SUPPORTED_LANG= [
     {name:"Spanish", code:"sp",image: require('@/assets/sp.png')},
 ]
 
-// also add the code in here
 
+// also add the code in here
 export type SUPPORTED_LANG_TYPE = 'en' | 'fr' | 'it' | 'sp';
 export const DEF_PAGES = [
     {name: "home", to: "/"},
