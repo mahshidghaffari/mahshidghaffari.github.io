@@ -1,15 +1,23 @@
 import { createI18n } from 'vue-i18n';
-import {DEF_LANG,LANG_DIR} from "@/composables/constants";
+import {DEF_LANG} from "@/composables/constants";
 import axios from 'axios';
 import {SUPPORTED_LANG_TYPE} from "@/composables/constants";
 
+function getInitLang(lang:SUPPORTED_LANG_TYPE){
+    return import(/* webpackChunkName: "lang-[request]" */ `@/lang/${lang}.json`).then(
+        (messages) => {
+            return messages.default;
+        }
+    );
+}
+const msg = await getInitLang(DEF_LANG as SUPPORTED_LANG_TYPE)
 
 const i18n = createI18n({
-    locale: localStorage.getItem('lang') || DEF_LANG,
+    locale: DEF_LANG,
     fallbackLocale: DEF_LANG,
     messages: {
-        [localStorage.getItem('lang') || DEF_LANG]: LANG_DIR[localStorage.getItem('lang') as SUPPORTED_LANG_TYPE || DEF_LANG]
-    },
+        [DEF_LANG]:msg
+    }
 });
 
 const loadedLanguages = [DEF_LANG]; // Default language that is preloaded
@@ -22,7 +30,6 @@ function setI18nLanguage(lang: SUPPORTED_LANG_TYPE) {
 
 
 export function loadLanguageAsync(lang: SUPPORTED_LANG_TYPE): Promise<string> {
-
     // If the same language is already loaded, resolve the promise immediately
     if (i18n.global.locale === lang) {
         return Promise.resolve(setI18nLanguage(lang));
@@ -35,13 +42,10 @@ export function loadLanguageAsync(lang: SUPPORTED_LANG_TYPE): Promise<string> {
     // If the language hasn't been loaded yet, use dynamic import to load the translation file
     return import(/* webpackChunkName: "lang-[request]" */ `@/lang/${lang}.json`).then(
         (messages) => {
-            if(messages){
-                i18n.global.setLocaleMessage(lang, messages.default);
-                i18n.global.locale = lang
-                loadedLanguages.push(lang);
-                return lang;
-            }else
-                return DEF_LANG
+            i18n.global.setLocaleMessage(lang, messages.default);
+            i18n.global.locale = lang
+            loadedLanguages.push(lang);
+            return lang;
         }
     );
 }
