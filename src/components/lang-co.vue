@@ -15,7 +15,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent ,computed, ref, watch} from 'vue';
+import { defineComponent ,computed, ref} from 'vue';
 import { SUPPORTED_LANG } from "@/composables/constants";
 import {mapActions, useStore} from 'vuex';
 
@@ -60,7 +60,6 @@ export default defineComponent({
             this.setLang(option.code);
             this.closeDropdown();
             this.selectedOption = option;
-            console.log(option);
         },
         handleClickOutside(event: MouseEvent) {
             if (

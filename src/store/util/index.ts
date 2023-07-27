@@ -1,7 +1,7 @@
 import {RootState} from "@/store/types";
 import {ActionTree, GetterTree, Module, MutationTree} from "vuex";
 import {utilState} from "@/store/util/types";
-import i18n from "@/composables/lang";
+import i18n, {loadLanguageAsync} from "@/composables/lang";
 
 const state: utilState = {
     language: 'en',
@@ -15,12 +15,17 @@ const mutations:MutationTree<utilState> = {
 }
 
 const actions: ActionTree<utilState, RootState> = {
-    setLang({commit},lang){
-        commit('SET_LANG',lang)
-        localStorage.setItem('lang', lang);
-        i18n.global.locale = lang;
-    }
-}
+    async setLang({ commit }, lang) {
+        try {
+            await loadLanguageAsync(lang); // Wait for language to be loaded
+            commit("SET_LANG", lang);
+            localStorage.setItem("lang", lang);
+            // i18n.global.locale = lang;
+        } catch (error) {
+            console.error("Error loading language:", error);
+        }
+    },
+};
 
 const getters: GetterTree<utilState, RootState> = {
     currentLang(state){

@@ -8,7 +8,6 @@
                 <h1 class="slide-in">{{ $t('home') }}</h1>
             </div>
         </transition>
-        <!-- Rest of your components -->
     </div>
 </template>
 
