@@ -4,5 +4,4 @@ import router from './router';
 import store from './store';
 import i18n from './composables/lang'
 
-
 createApp(App).use(store).use(router).use(i18n).mount('#app');

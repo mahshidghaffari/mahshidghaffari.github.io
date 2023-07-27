@@ -1,4 +1,4 @@
-export const DEF_LANG = 'en';
+export const DEF_LANG = localStorage.getItem('lang') || 'en';
 
 // for adding lang , just add new lang to below object + Icon in png file you
 // can download the icon from here https://www.flaticon.com/free-icons/flag
@@ -10,15 +10,6 @@ export const SUPPORTED_LANG= [
     {name:"Spanish", code:"sp",image: require('@/assets/sp.png')},
 ]
 
-// add the related json file in here
-// json file name should be the same as the code in above object
-export const LANG_DIR = {
-    en: require('../lang/en.json'),
-    fr: require('../lang/fr.json'),
-    it: require('../lang/it.json'),
-    sp: require('../lang/sp.json'),
-}
-
 // also add the code in here
 
 export type SUPPORTED_LANG_TYPE = 'en' | 'fr' | 'it' | 'sp';
@@ -27,5 +18,4 @@ export const DEF_PAGES = [
     {name: "about", to: "/about"},
     {name: "contact", to: "/contact"}
 ]
-
 

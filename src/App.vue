@@ -1,22 +1,27 @@
 <template>
-    <HeaderCo class="header-container"/>
-    <div class="app-container">
-        <div class="card-view">
-            <router-view/>
-        </div>
-    </div>
+    <transition name="text-transition">
+       <div>
+           <HeaderCo class="header-container"/>
+           <div class="app-container">
+               <div class="card-view">
+                   <router-view/>
+               </div>
+           </div>
+       </div>
+    </transition>
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
+import {defineComponent} from "vue";
 import HeaderCo from "@/components/Header-co.vue";
 import {useStore} from "vuex";
 import i18n from "@/composables/lang";
+
 export default defineComponent({
     components: {
         HeaderCo,
     },
-    setup(){
+    setup() {
         const store = useStore()
         store.commit('util/SET_LANG', i18n.global.locale);
     }
@@ -24,16 +29,18 @@ export default defineComponent({
 </script>
 
 <style>
-body{
+body {
     margin: 0;
     background: linear-gradient(90deg, #C7C5F4, #776BCC);
 }
+
 .app-container {
     display: flex;
     justify-content: center;
     height: 30vh;
 }
-.header-container{
+
+.header-container {
     height: 10vh;
     text-align: center;
 
