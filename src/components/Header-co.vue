@@ -48,6 +48,9 @@ export default defineComponent({
 .link:active {
     color: black;
 }
+.link li:hover {
+    background-color: #5E56A5;
+}
 
 
 .lang-switcher{

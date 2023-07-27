@@ -35,11 +35,13 @@ export function loadLanguageAsync(lang: SUPPORTED_LANG_TYPE): Promise<string> {
     // If the language hasn't been loaded yet, use dynamic import to load the translation file
     return import(/* webpackChunkName: "lang-[request]" */ `@/lang/${lang}.json`).then(
         (messages) => {
-            console.log(messages.default)
-            i18n.global.setLocaleMessage(lang, messages.default);
-            i18n.global.locale = lang
-            loadedLanguages.push(lang);
-            return lang;
+            if(messages){
+                i18n.global.setLocaleMessage(lang, messages.default);
+                i18n.global.locale = lang
+                loadedLanguages.push(lang);
+                return lang;
+            }else
+                return DEF_LANG
         }
     );
 }
