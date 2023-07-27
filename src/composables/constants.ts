@@ -24,3 +24,5 @@ export const DEF_PAGES = [
     {name: "contact", to: "/contact"}
 ]
 
+export type SUPPORTED_LANG_TYPE = 'en' | 'fr' | 'it' | 'sp';
+

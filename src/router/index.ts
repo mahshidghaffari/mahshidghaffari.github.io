@@ -1,5 +1,7 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
+import { loadLanguageAsync } from '@/composables/lang';
+import {DEF_LANG, SUPPORTED_LANG_TYPE} from "@/composables/constants";
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -26,5 +28,14 @@ const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes
 })
+router.beforeEach((to, from, next) => {
+  const lang = to.params.lang || localStorage.getItem("lang") || DEF_LANG
+  loadLanguageAsync(lang as SUPPORTED_LANG_TYPE).then(()=> {
+    console.log("here 0")
+    next()
+  })
+});
+
+
 
 export default router
