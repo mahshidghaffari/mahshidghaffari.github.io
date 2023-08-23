@@ -1,4 +1,6 @@
 /* styles.css */
+@import 'bootstrap/dist/css/bootstrap.css';
+@import 'bootstrap-vue/dist/bootstrap-vue.css';
 
 .text-transition-enter-active,
 .text-transition-leave-active {
