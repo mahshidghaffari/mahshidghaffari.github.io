@@ -2,6 +2,14 @@
 @import 'bootstrap/dist/css/bootstrap.css';
 @import 'bootstrap-vue/dist/bootstrap-vue.css';
 
+
+body{
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+}
+
 .text-transition-enter-active,
 .text-transition-leave-active {
     transition: opacity 1s ease-in-out;
@@ -39,17 +47,3 @@
     }
 }
 
-/*.zoom-in {*/
-/*    animation: zoomIn 1s;*/
-/*}*/
-
-/*@keyframes zoomIn {*/
-/*    from {*/
-/*        transform: scale(0);*/
-/*        opacity: 0;*/
-/*    }*/
-/*    to {*/
-/*        transform: scale(1);*/
-/*        opacity: 1;*/
-/*    }*/
-/*}*/
