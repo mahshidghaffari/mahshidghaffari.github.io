@@ -4,7 +4,7 @@
         <shooting-star/>
         <night-sky/>
         <div class="row justify-content-center align-items-center h-100">
-            <div class="col-md-8 col-11 bg-primary h-50 card-view">
+            <div class="col-md-10 col-11 bg-primary card-view text-white">
                 <router-view/>
             </div>
         </div>
@@ -45,13 +45,15 @@ export default defineComponent({
 }
 
 .card-view {
-    background: linear-gradient(90deg, white, #aeadc3);
+    //background: linear-gradient(90deg, #2d2e43, #aeadc3);
+    background: linear-gradient(90deg, #0c0d1e, #2d2e43);
     box-shadow: 0px 0px 24px #5C5696;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px #363459cc;
     padding: 20px;
     margin: 20px;
     z-index: 6;
+    height: 60%;
 }
 
 
