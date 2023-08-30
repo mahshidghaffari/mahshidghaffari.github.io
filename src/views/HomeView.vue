@@ -1,32 +1,21 @@
 <template>
     <div class="container h-100">
-        <div class="row h-100  align-items-center">
-            <div class="col-sm-3 col-12 text-center">
+        <div class="row h-100  align-items-center res-row-h">
+            <div class="col-lg-3 col-12 text-center card_bg">
                 <img src="../assets/Img/mahshid.png" alt="profile pic" class="profilePic">
                 <h4 class="mt-5">Mahshid</h4>
                 <small class="text-primary">+4 years experience</small>
                 <p> Front end developer</p>
+                <BIconBatteryFull/>
             </div>
-            <div class="col-9 align-items-center">
+            <div class="col-lg-8 col-12 align-items-center card_bg res-col-h mt-lg-o mt-4 m-lg-3">
                 <transition name="text-transition">
-                    <!-- Apply the .text-transition class to the container element -->
                     <div class="text-container">
-<!--                        <p class="slide-in">{{ $t('hello') }}</p>-->
-<!--                        <p class="slide-in">{{ $t('welcome') }}</p>-->
-<!--                        <h1 class="slide-in">{{ $t('home') }}</h1>-->
-
-
-                        <h2 class="border-bottom border-info slide-in pb-3 mb-2">About Me</h2>
-
-                        <p >Hello! I’m Mahshid .I am an Experienced Front End Developer with 4 years
-                            of experience in frontend development and a total of 6 years in the tech industry, which
-                            includes management roles and entrepreneurship. I hold a BSc in Data Science and Artificial
-                            Intelligence from Maastricht University. My proficiency lies in JavaScript, TypeScript, Vue/Nuxt
-                            , React, Agile, GIT, and Docker. I also have expertise in integrating Machine Learning with web
-                            analytics. Throughout my career, I have had the opportunity to collaborate with renowned companies
-                            such as Huawei and Ericsson, where I contributed my valuable expertise.</p>
-
-                        <h2 class="border-bottom border-info slide-in pb-3 mb-2">Skill</h2>
+                        <h2 class=" slide-in pb-3 mb-2">About Me</h2>
+                        <hr class="w-100 mt-3 title-hr" />
+                        <p>{{$t('about_me')}}</p>
+                        <h2 class="slide-in pb-3 mb-2">Skill</h2>
+                        <hr class="w-100 mt-3 title-hr" />
                         <p>JavaScript, TypeScript, Java, Vue.js, Vuex , Composition API , React,JSX , Axios, HTML CSS, SPA, PWA,
                             Responsive Design, Bootstrap Vue, Element UI,Web Pack, Docker, GIT, Agile</p>
                     </div>
@@ -38,6 +27,7 @@
 
 
 <script lang="ts">
+import { BIconBatteryFull } from 'bootstrap-icons-vue';
 import { Vue } from 'vue-class-component';
 
 export default class HomeView extends Vue {}
@@ -45,10 +35,47 @@ export default class HomeView extends Vue {}
 
 <style>
 .profilePic{
-    width: 100%;
+    width: 80%;
     align-content: center;
     //border-radius: 50%;
     clip-path: circle();
+    height: auto;
+
 
 }
+
+.card_bg{
+    background: linear-gradient(130deg, #531933, #2d2e43);
+    box-shadow: 0px 0px 24px #5C5696;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px #363459cc;
+    padding: 20px;
+    opacity: 0.89;
+}
+
+.title-hr{
+    background-image: linear-gradient(to right,red,lightgray,rgba(164,255,145,0));
+    border: 0;
+    height: 3px;
+}
+
+.res-col-h{
+    height: 69%;
+    overflow:auto;
+}
+
+@media (max-width: 992px) {
+    .res-col-h {
+        height:fit-content;
+        overflow:hidden;
+
+    }
+}
+
+@media (max-width: 992px) {
+    .res-row-h{
+        overflow-y: auto;
+    }
+}
+
 </style>

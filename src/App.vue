@@ -4,7 +4,7 @@
         <shooting-star/>
         <night-sky/>
         <div class="row justify-content-center align-items-center h-100">
-            <div class="col-md-10 col-11 bg-primary card-view text-white">
+            <div class="col-md-10 col-10 card-view text-white sm-h khar">
                 <router-view/>
             </div>
         </div>
@@ -45,13 +45,6 @@ export default defineComponent({
 }
 
 .card-view {
-    //background: linear-gradient(90deg, #2d2e43, #aeadc3);
-    background: linear-gradient(90deg, #0c0d1e, #2d2e43);
-    box-shadow: 0px 0px 24px #5C5696;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px #363459cc;
-    padding: 20px;
-    margin: 20px;
     z-index: 6;
     height: 60%;
 }
@@ -98,5 +91,15 @@ export default defineComponent({
     left:0;
     bottom: 0;
     right: 0;
+}
+
+.khar{
+    height: 85%;
+}
+
+@media (max-width: 767px) {
+    .khar {
+        height:90%;
+    }
 }
 </style>
