@@ -28,9 +28,8 @@ Submission Guidelines:
 
 -----
 ## Add Language Structure 
-1. Incorporate the PNG icon into the src/assets directory by downloading it from this link: https://www.flaticon.com/free-icons/flag.
-2. Copy the translated .JSON file in src/lang
-3. Update the const SUPPORTED_LANG_TYPE and SUPPORTED_LANG in the constants file located within the "composables" directory. Refer to the comment lines in the constant.ts file for further information on this update.
+1. Incorporate the PNG icon into your file by downloading it from this link: https://www.flaticon.com/free-icons/flag.
+2. Update the const SUPPORTED_LANG_TYPE and SUPPORTED_LANG_TYPE in the constants file located within the "composables" directory. Refer to the comment lines in the constant.ts file for further information on this update.
 
 
 -----

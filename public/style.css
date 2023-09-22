@@ -1,4 +1,19 @@
 /* styles.css */
+@import 'bootstrap/dist/css/bootstrap.css';
+@import 'bootstrap-vue/dist/bootstrap-vue.css';
+
+
+body{
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    font-size: 18px !important;
+    font-family: Poppins,sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-size-adjust: 100%;
+}
+
 
 .text-transition-enter-active,
 .text-transition-leave-active {
@@ -37,17 +52,25 @@
     }
 }
 
-/*.zoom-in {*/
-/*    animation: zoomIn 1s;*/
-/*}*/
 
-/*@keyframes zoomIn {*/
-/*    from {*/
-/*        transform: scale(0);*/
-/*        opacity: 0;*/
-/*    }*/
-/*    to {*/
-/*        transform: scale(1);*/
-/*        opacity: 1;*/
-/*    }*/
-/*}*/
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #31394D;
+
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(to top, rgba(61, 20, 43, 0.87), #831818,rgba(164,255,145,0));
+
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
