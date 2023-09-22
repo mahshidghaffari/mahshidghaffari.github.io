@@ -1,5 +1,6 @@
------p
-## Project setup
+-----
+
+## Pro
 ```
 npm install
 ```
