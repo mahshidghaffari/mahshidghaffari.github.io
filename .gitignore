@@ -1,9 +1,13 @@
+# Ignore .DS_Store files created by macOS
 .DS_Store
-node_modules
+
+# Ignore the node_modules directory
+node_modules/
+
+# Ignore the dist directory, typically the output of a build process
 /dist
 
-
-# local env files
+# Local environment files (you can customize this further)
 .env.local
 .env.*.local
 
@@ -21,3 +25,11 @@ pnpm-debug.log*
 *.njsproj
 *.sln
 *.sw?
+
+# Exclude sensitive or environment-specific files (adjust as needed)
+.env
+.env.production
+
+# Include the docs directory for GitHub Pages
+# Note: If you're using "docs" as your GitHub Pages directory
+!/docs/
