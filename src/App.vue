@@ -1,6 +1,6 @@
 <template>
 <!--&lt;!&ndash;<HeaderCo class="header-container"/>&ndash;&gt;-->
-    <div class="container app-container">
+    <div class="container app-container justify-content-center">
         <shooting-star/>
         <night-sky/>
         <div class="row justify-content-center align-items-center h-100">
@@ -36,7 +36,7 @@ export default defineComponent({
 <style>
 .app-container {
     justify-content: center;
-    height: 100vh;
+    height: 95vh;
 }
 
 .header-container {
@@ -85,13 +85,6 @@ export default defineComponent({
     }
 }
 
-.background-container{
-    position: fixed;
-    top: 0;
-    left:0;
-    bottom: 0;
-    right: 0;
-}
 
 .khar{
     height: 85%;

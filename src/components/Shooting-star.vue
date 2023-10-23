@@ -63,7 +63,7 @@ $starCount: 1000;
         &:nth-child(#{$j}) {
             position: absolute;
             width: 100%;
-            height: 130%;
+            height: 60%;
             transform: rotate(random(10)+35deg);
             z-index: 5;
         //    background-color: #30000080;
